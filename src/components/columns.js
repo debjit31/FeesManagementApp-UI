@@ -1,5 +1,4 @@
-import { format } from 'date-fns'
- export const COLUMNS = [
+export const COLUMNS = [
     {
         Header: 'Id',
         accessor: 'id',
