@@ -1,11 +1,11 @@
 import React from "react";
 import './App.css'
-import { SortingTable } from "./components/SortingTable";
+import { PaginationFilteringTable } from "./components/PaginationFilteringTable";
 
 function App(){
   return (
     <div className="App">
-      <SortingTable />
+      <PaginationFilteringTable />
     </div>
   )
 }
