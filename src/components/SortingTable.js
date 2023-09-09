@@ -1,19 +1,26 @@
 import React, { useMemo } from 'react'
-import { useTable, useSortBy } from 'react-table'
+import { useTable, useSortBy, useFilters } from 'react-table'
 import MOCK_DATA from './MOCK_DATA.json'
 import { COLUMNS } from './columns'
 import './table.css'
-// import { AiOutlineArrowUp } from "react-icons/fa";
+import { ColumnFilter } from './ColumnFilter'
 
 export const SortingTable = () => {
 
     const columns = useMemo(() => COLUMNS, [])
     const data = useMemo(() => MOCK_DATA, [])
+    const defaultColumn = useMemo(() => {
+        return {
+            Filter: ColumnFilter
+        }
+    }, [])
 
     const tableInstance = useTable({
         columns,
-        data
+        data,
+        defaultColumn
     },
+    useFilters,
     useSortBy)
 
     const {
@@ -35,6 +42,7 @@ export const SortingTable = () => {
                                 {
                                     headerGroup.headers.map(column => (
                                         <th {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render('Header')}
+                                        <div>{column.canFilter ? column.render('Filter') : null}</div>
                                         {/* <span>
                                             {
                                                 column.isSorted ? (column.isSortDesc ? <FaBeer /> : <AiOutlineArrowUp />) : ''

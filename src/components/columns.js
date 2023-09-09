@@ -2,7 +2,8 @@ export const COLUMNS = [
     {
         Header: 'Id',
         accessor: 'id',
-        Footer: 'Id'
+        Footer: 'Id',
+        disableFilters: true
     },
     {
         Header: 'First Name',
@@ -22,7 +23,7 @@ export const COLUMNS = [
     {
         Header: 'Date of Payment',
         accessor: 'date_of_payment',
-        Footer: 'Date of Payment',
+        Footer: 'Date of Payment'
         // Cell: ({ value }) => {return format(value, 'dd-mm-yyyy')}
     },
     {
