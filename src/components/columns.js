@@ -1,35 +1,40 @@
 export const COLUMNS = [
     {
-        Header: 'Id',
-        accessor: 'id',
-        Footer: 'Id',
+        Header: 'TransactionId',
+        accessor: 'transactionId',
+        Footer: 'TransactionId',
         disableFilters: true
     },
     {
-        Header: 'First Name',
-        accessor: 'first_name',
-        Footer: 'First Name'
-    },
-    {
-        Header: 'Last Name',
-        accessor: 'last_name',
-        Footer: 'Last Name'
+        Header: 'Name',
+        accessor: 'studentName',
+        Footer: 'Name'
     },
     {
         Header: 'Email Address',
-        accessor: 'email',
+        accessor: 'studentEmail',
         Footer: 'Email Address'
     },
     {
         Header: 'Date of Payment',
-        accessor: 'date_of_payment',
+        accessor: 'transactionDate',
         Footer: 'Date of Payment'
         // Cell: ({ value }) => {return format(value, 'dd-mm-yyyy')}
     },
     {
+        Header: 'Fees for Month',
+        accessor: 'month',
+        Footer: 'Fees for Month'
+    },
+    {
+        Header: 'Amount',
+        accessor: 'amount',
+        Footer: 'Amount'
+    },
+    {
         Header: 'Notification Sent',
-        accessor: 'emil_Sent',
-        Footer: 'Notification'
+        accessor: 'notificationTriggered',
+        Footer: 'Notification Sent'
     }
 ]
 

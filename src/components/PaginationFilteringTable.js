@@ -1,14 +1,13 @@
 import React, { useMemo } from 'react'
 import { useTable, useSortBy, useFilters, usePagination } from 'react-table'
-import MOCK_DATA from './MOCK_DATA.json'
 import { COLUMNS } from './columns'
 import './table.css'
 import { ColumnFilter } from './ColumnFilter'
 
-export const PaginationFilteringTable = () => {
+export const PaginationFilteringTable = ({ results }) => {
 
     const columns = useMemo(() => COLUMNS, [])
-    const data = useMemo(() => MOCK_DATA, [])
+    const data = useMemo(() => results, [results])
     const defaultColumn = useMemo(() => {
         return {
             Filter: ColumnFilter
