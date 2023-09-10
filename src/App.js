@@ -8,13 +8,9 @@ function App(){
   const [results, setResults] = useState(null);
 
   useEffect(() => {
-    const abortController = new AbortController();
-    axios.get(BASE_URL, {signal: abortController.signal}).then((response) => {
+    axios.get(BASE_URL).then((response) => {
       setResults(response.data);
     });
-    return () => {
-      abortController.abort()
-    }
   }, []);
 
   if (!results) return null;
